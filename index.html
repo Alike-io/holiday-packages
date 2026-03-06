@@ -577,76 +577,81 @@
 </div>
 
 <script>
-// ── BASE URL: Change this to your GitHub Pages repo URL ──
+// ── BASE URL: Your GitHub Pages repo ──
 const BASE_URL = "https://alike-io.github.io/holiday-packages/flyers/";
+
+// ────────────────────────────────────────────────────
+//  RENAME YOUR FILES before uploading to GitHub:
+//  (See the mapping at the bottom of this script)
+// ────────────────────────────────────────────────────
 
 const destinations = [
   {
     name: "Dubai",
     emoji: "🏙️",
     files: [
-      { name: "Dubai 3N4D - ₹25K", type: "pdf", file: "Dubai_3N4D_25k.pdf", desc: "3 Nights / 4 Days" },
-      { name: "Dubai 4N5D - ₹30K", type: "pdf", file: "Dubai_4N5D_30k.pdf", desc: "4 Nights / 5 Days" },
-      { name: "Dubai Ultimate Explorer with Ferrari World - ₹45K", type: "pdf", file: "Dubai_ultimate_explorer_with Ferrari world_45k.pdf", desc: "Ultimate Explorer Package" },
-      { name: "Dubai + Abu Dhabi Day Tour Explorer 5N6D - ₹36K", type: "pdf", file: "Dubai+Abu Dhabi Day tour_Explorer_5N6D_36k.pdf", desc: "5 Nights / 6 Days" },
-      { name: "Dubai + Abu Dhabi Explorer with Miracle & Global 5N6D - ₹38K", type: "pdf", file: "Dubai+Abu Dhabi Day tour_Explorer_Miracle & Global_5N6D_38k.pdf", desc: "5 Nights / 6 Days • Miracle Garden & Global Village" }
+      { name: "Dubai 3N4D", type: "pdf", file: "dubai-3n4d-25k.pdf", desc: "3 Nights / 4 Days • Starting ₹25K" },
+      { name: "Dubai 4N5D", type: "pdf", file: "dubai-4n5d-30k.pdf", desc: "4 Nights / 5 Days • Starting ₹30K" },
+      { name: "Dubai Ultimate Explorer with Ferrari World", type: "pdf", file: "dubai-ultimate-explorer-ferrari-world-45k.pdf", desc: "Ultimate Explorer Package • ₹45K" },
+      { name: "Dubai + Abu Dhabi Day Tour Explorer 5N6D", type: "pdf", file: "dubai-abudhabi-explorer-5n6d-36k.pdf", desc: "5 Nights / 6 Days • Starting ₹36K" },
+      { name: "Dubai + Abu Dhabi Explorer with Miracle Garden & Global Village 5N6D", type: "pdf", file: "dubai-abudhabi-miracle-global-5n6d-38k.pdf", desc: "5 Nights / 6 Days • Starting ₹38K" }
     ]
   },
   {
     name: "Singapore",
     emoji: "🦁",
     files: [
-      { name: "Singapore Explorer 4N5D - ₹55K", type: "pdf", file: "Singapore_explorer_4N5D_55k.pdf", desc: "4 Nights / 5 Days" },
-      { name: "Singapore Explorer 6N7D - ₹75K", type: "pdf", file: "Singapore_explorer_6N7D_75k.pdf", desc: "6 Nights / 7 Days" }
+      { name: "Singapore Explorer 4N5D", type: "pdf", file: "singapore-explorer-4n5d-55k.pdf", desc: "4 Nights / 5 Days • Starting ₹55K" },
+      { name: "Singapore Explorer 6N7D", type: "pdf", file: "singapore-explorer-6n7d-75k.pdf", desc: "6 Nights / 7 Days • Starting ₹75K" }
     ]
   },
   {
     name: "Vietnam",
     emoji: "🏮",
     files: [
-      { name: "Vietnam - Hanoi & Da Nang 4N - ₹30K/₹35K", type: "pdf", file: "Vietnam - Hanoi & Da Nang_4N_30k&35k.pdf", desc: "4 Nights • Hanoi + Da Nang" },
-      { name: "Vietnam - Hanoi & Phu Quoc 5N - ₹44K/₹49K", type: "pdf", file: "Vietnam - Hanoi & Phu Quoc_5N_44k&49k.pdf", desc: "5 Nights • Hanoi + Phu Quoc" },
-      { name: "Vietnam - Phu Quoc 4N5D - ₹25K", type: "pdf", file: "Vietnam - Phu Quoc_4N5D_25K.pdf", desc: "4 Nights / 5 Days • Beach Paradise" },
-      { name: "Vietnam - HCM, Da Nang, Hoi An, Hanoi & Ha Long Bay 6N7D - ₹40K/₹50K", type: "pdf", file: "Vietnam - HCM+DA Nang+HoiAn+Hanoi+Halong Bay_6N7D_40k&50k.pdf", desc: "6 Nights / 7 Days • Full Country Tour" },
-      { name: "Vietnam - Hanoi, Ha Long Bay Cruise & Da Nang 7N8D - ₹60K/₹66K", type: "pdf", file: "Vietnam - Hanoi, Halong Bay cruise and Da Nang_7N8D_60K&66K.pdf", desc: "7 Nights / 8 Days • Cruise Included" },
-      { name: "Vietnam Premium 7N8D", type: "pdf", file: "Vietnam_premium_7n8d.pdf", desc: "7 Nights / 8 Days • Premium Experience" }
+      { name: "Vietnam - Hanoi & Da Nang 4N", type: "pdf", file: "vietnam-hanoi-danang-4n-30k-35k.pdf", desc: "4 Nights • Starting ₹30K / ₹35K" },
+      { name: "Vietnam - Hanoi & Phu Quoc 5N", type: "pdf", file: "vietnam-hanoi-phuquoc-5n-44k-49k.pdf", desc: "5 Nights • Starting ₹44K / ₹49K" },
+      { name: "Vietnam - Phu Quoc 4N5D", type: "pdf", file: "vietnam-phuquoc-4n5d-25k.pdf", desc: "4 Nights / 5 Days • Starting ₹25K" },
+      { name: "Vietnam - Full Country Tour 6N7D", type: "pdf", file: "vietnam-hcm-danang-hoian-hanoi-halongbay-6n7d-40k-50k.pdf", desc: "6 Nights / 7 Days • HCM, Da Nang, Hoi An, Hanoi & Ha Long Bay • ₹40K / ₹50K" },
+      { name: "Vietnam - Hanoi, Ha Long Bay Cruise & Da Nang 7N8D", type: "pdf", file: "vietnam-hanoi-halongbay-cruise-danang-7n8d-60k-66k.pdf", desc: "7 Nights / 8 Days • Cruise Included • ₹60K / ₹66K" },
+      { name: "Vietnam Premium 7N8D", type: "pdf", file: "vietnam-premium-7n8d.pdf", desc: "7 Nights / 8 Days • Premium Experience" }
     ]
   },
   {
     name: "Thailand",
     emoji: "🛕",
     files: [
-      { name: "Thailand - Pattaya & Bangkok 4N5D - ₹23K", type: "pdf", file: "Thailand_pattaya_bangkok_4n5d_23k.pdf", desc: "4 Nights / 5 Days" },
-      { name: "Thailand - Krabi & Phuket 4N5D - ₹24K", type: "pdf", file: "thailand_krabi_phuket_4n5d_24k.pdf", desc: "4 Nights / 5 Days" }
+      { name: "Thailand - Pattaya & Bangkok 4N5D", type: "pdf", file: "thailand-pattaya-bangkok-4n5d-23k.pdf", desc: "4 Nights / 5 Days • Starting ₹23K" },
+      { name: "Thailand - Krabi & Phuket 4N5D", type: "pdf", file: "thailand-krabi-phuket-4n5d-24k.pdf", desc: "4 Nights / 5 Days • Starting ₹24K" }
     ]
   },
   {
     name: "Bali",
     emoji: "🌺",
     files: [
-      { name: "Bali 4N5D - ₹27K", type: "pdf", file: "Bali_4N5D_27k.pdf", desc: "4 Nights / 5 Days" },
-      { name: "Bali 6N7D with 2 Nights in Villa - ₹45K", type: "pdf", file: "Bali_6N7D_with 2 nights in villa_45k.pdf", desc: "6 Nights / 7 Days • Villa Stay Included" }
+      { name: "Bali 4N5D", type: "pdf", file: "bali-4n5d-27k.pdf", desc: "4 Nights / 5 Days • Starting ₹27K" },
+      { name: "Bali 6N7D with Villa Stay", type: "pdf", file: "bali-6n7d-villa-45k.pdf", desc: "6 Nights / 7 Days • 2 Nights in Villa • ₹45K" }
     ]
   },
   {
     name: "Andaman",
     emoji: "🏝️",
     files: [
-      { name: "Andaman 5N6D - ₹19K", type: "pdf", file: "Andaman_5n6d_19k.pdf", desc: "5 Nights / 6 Days" }
+      { name: "Andaman 5N6D", type: "pdf", file: "andaman-5n6d-19k.pdf", desc: "5 Nights / 6 Days • Starting ₹19K" }
     ]
   },
   {
     name: "Bhutan",
     emoji: "🏔️",
     files: [
-      { name: "Bhutan 7N8D - ₹45K", type: "pdf", file: "Bhutan_7N8D_45k.pdf", desc: "7 Nights / 8 Days" }
+      { name: "Bhutan 7N8D", type: "pdf", file: "bhutan-7n8d-45k.pdf", desc: "7 Nights / 8 Days • Starting ₹45K" }
     ]
   },
   {
     name: "Multi-Country",
     emoji: "🌏",
     files: [
-      { name: "Asian Extravaganza 10N11D - 4 Cities - ₹1.6L", type: "pdf", file: "Asian_Extravaganza_10N11D_4 cities_160k.pdf", desc: "10 Nights / 11 Days • 4 Cities" }
+      { name: "Asian Extravaganza 10N11D - 4 Cities", type: "pdf", file: "asian-extravaganza-10n11d-4cities-160k.pdf", desc: "10 Nights / 11 Days • 4 Cities • ₹1.6L" }
     ]
   }
 ];
