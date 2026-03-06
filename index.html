@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Holiday Packages | Alike</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --coral: #F15A29;
+    --coral-light: #FF7A50;
+    --coral-soft: #FFF0EB;
+    --coral-hover: #E04A1A;
+    --dark: #1A1A2E;
+    --dark-soft: #2D2D44;
+    --gray-100: #F8F8FA;
+    --gray-200: #EFEFEF;
+    --gray-300: #D4D4D4;
+    --gray-400: #9A9AB0;
+    --gray-600: #5A5A72;
+    --white: #FFFFFF;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--gray-100);
+    color: var(--dark);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ─── HERO / HEADER ─── */
+  .hero {
+    background: linear-gradient(135deg, var(--coral) 0%, var(--coral-light) 50%, #FF9A76 100%);
+    padding: 0 0 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    animation: float 10s ease-in-out infinite reverse;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-30px) scale(1.05); }
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 32px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--white);
+  }
+
+  .logo-icon {
+    width: 40px; height: 40px;
+    background: var(--white);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--coral);
+  }
+
+  .logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--white); }
+
+  .hero-content {
+    text-align: center;
+    max-width: 700px;
+    margin: 40px auto 0;
+    padding: 0 32px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    animation: fadeDown 0.6s ease;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 16px;
+    animation: fadeDown 0.8s ease;
+  }
+
+  .hero p {
+    color: rgba(255,255,255,0.9);
+    font-size: 18px;
+    line-height: 1.6;
+    animation: fadeDown 1s ease;
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── SEARCH BAR ─── */
+  .search-wrapper {
+    max-width: 560px;
+    margin: -28px auto 0;
+    padding: 0 32px;
+    position: relative;
+    z-index: 10;
+  }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    border-radius: 50px;
+    padding: 6px 8px 6px 24px;
+    box-shadow: var(--shadow-lg);
+    transition: box-shadow 0.3s;
+  }
+
+  .search-bar:focus-within {
+    box-shadow: 0 8px 40px rgba(241, 90, 41, 0.2);
+  }
+
+  .search-bar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: var(--dark);
+    background: transparent;
+  }
+
+  .search-bar input::placeholder { color: var(--gray-400); }
+
+  .search-btn {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--coral);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+    flex-shrink: 0;
+  }
+
+  .search-btn:hover {
+    background: var(--coral-hover);
+    transform: scale(1.05);
+  }
+
+  .search-btn svg { width: 18px; height: 18px; stroke: white; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* ─── MAIN CONTENT ─── */
+  .main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 32px 80px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+
+  .section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--dark);
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--gray-400);
+    margin-bottom: 8px;
+  }
+
+  .breadcrumb a {
+    color: var(--coral);
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .breadcrumb a:hover { text-decoration: underline; }
+
+  .breadcrumb svg { width: 14px; height: 14px; stroke: var(--gray-300); fill: none; stroke-width: 2; }
+
+  /* ─── DESTINATION GRID ─── */
+  .destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .dest-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+    animation: cardIn 0.5s ease both;
+  }
+
+  .dest-card:nth-child(1) { animation-delay: 0.05s; }
+  .dest-card:nth-child(2) { animation-delay: 0.1s; }
+  .dest-card:nth-child(3) { animation-delay: 0.15s; }
+  .dest-card:nth-child(4) { animation-delay: 0.2s; }
+  .dest-card:nth-child(5) { animation-delay: 0.25s; }
+  .dest-card:nth-child(6) { animation-delay: 0.3s; }
+  .dest-card:nth-child(7) { animation-delay: 0.35s; }
+  .dest-card:nth-child(8) { animation-delay: 0.4s; }
+  .dest-card:nth-child(9) { animation-delay: 0.45s; }
+  .dest-card:nth-child(10) { animation-delay: 0.5s; }
+  .dest-card:nth-child(11) { animation-delay: 0.55s; }
+
+  @keyframes cardIn {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .dest-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 4px;
+    background: linear-gradient(90deg, var(--coral), var(--coral-light));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+  }
+
+  .dest-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .dest-card:hover::before { transform: scaleX(1); }
+
+  .dest-icon {
+    width: 52px; height: 52px;
+    border-radius: 14px;
+    background: var(--coral-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin-bottom: 18px;
+    transition: transform 0.3s;
+  }
+
+  .dest-card:hover .dest-icon { transform: scale(1.1); }
+
+  .dest-name {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 6px;
+  }
+
+  .dest-count {
+    font-size: 13px;
+    color: var(--gray-400);
+    font-weight: 500;
+  }
+
+  .dest-arrow {
+    position: absolute;
+    bottom: 20px; right: 20px;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--gray-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+  }
+
+  .dest-card:hover .dest-arrow {
+    background: var(--coral);
+  }
+
+  .dest-arrow svg {
+    width: 16px; height: 16px;
+    stroke: var(--gray-400);
+    fill: none;
+    stroke-width: 2;
+    transition: stroke 0.3s;
+  }
+
+  .dest-card:hover .dest-arrow svg { stroke: var(--white); }
+
+  /* ─── FILES VIEW ─── */
+  .files-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .file-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--white);
+    border-radius: var(--radius-sm);
+    padding: 18px 24px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.25s;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--dark);
+    animation: cardIn 0.4s ease both;
+  }
+
+  .file-row:nth-child(1) { animation-delay: 0.05s; }
+  .file-row:nth-child(2) { animation-delay: 0.1s; }
+  .file-row:nth-child(3) { animation-delay: 0.15s; }
+  .file-row:nth-child(4) { animation-delay: 0.2s; }
+  .file-row:nth-child(5) { animation-delay: 0.25s; }
+  .file-row:nth-child(6) { animation-delay: 0.3s; }
+
+  .file-row:hover {
+    transform: translateX(6px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .file-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+    letter-spacing: 0.5px;
+  }
+
+  .file-icon.pdf { background: #FDEAEA; color: #D72C2C; }
+  .file-icon.docx { background: #E3EEFA; color: #2B6CB0; }
+  .file-icon.xlsx { background: #E6F7EC; color: #22874A; }
+  .file-icon.pptx { background: #FFF0E0; color: #D97706; }
+
+  .file-info { flex: 1; min-width: 0; }
+
+  .file-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--dark);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .file-meta {
+    font-size: 12px;
+    color: var(--gray-400);
+    margin-top: 3px;
+    display: flex;
+    gap: 12px;
+  }
+
+  .download-btn {
+    width: 38px; height: 38px;
+    border-radius: 10px;
+    background: var(--coral-soft);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s;
+    flex-shrink: 0;
+  }
+
+  .download-btn:hover {
+    background: var(--coral);
+  }
+
+  .download-btn svg {
+    width: 16px; height: 16px;
+    stroke: var(--coral);
+    fill: none;
+    stroke-width: 2.5;
+    transition: stroke 0.25s;
+  }
+
+  .download-btn:hover svg { stroke: var(--white); }
+
+  /* ─── BACK BUTTON ─── */
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: 2px solid var(--gray-200);
+    border-radius: 30px;
+    padding: 10px 22px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gray-600);
+    cursor: pointer;
+    transition: all 0.25s;
+    margin-bottom: 24px;
+  }
+
+  .back-btn:hover {
+    border-color: var(--coral);
+    color: var(--coral);
+  }
+
+  .back-btn svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: var(--dark);
+    padding: 48px 32px 32px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .footer p {
+    color: rgba(255,255,255,0.4);
+    font-size: 13px;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 32px; }
+    .hero p { font-size: 16px; }
+    .section-header h2 { font-size: 24px; }
+    .destinations-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; }
+    .dest-card { padding: 22px 18px; }
+    .nav-links { display: none; }
+    .nav { padding: 20px 20px; }
+    .main { padding: 40px 20px 60px; }
+    .file-row { padding: 14px 16px; }
+  }
+
+  @media (max-width: 480px) {
+    .destinations-grid { grid-template-columns: 1fr 1fr; }
+    .hero h1 { font-size: 28px; }
+    .hero-content { margin-top: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <nav class="nav">
+    <a class="logo" href="#">
+      <div class="logo-icon">A</div>
+      <span class="logo-text">Alike</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Explore</a></li>
+      <li><a href="#">Holidays</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="hero-content">
+    <div class="hero-badge">📂 Holiday Packages</div>
+    <h1>Download Your Dream Holiday</h1>
+    <p>Browse destination folders and download detailed itineraries, pricing guides, and travel documents.</p>
+  </div>
+</div>
+
+<!-- SEARCH -->
+<div class="search-wrapper">
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search destinations or files..." oninput="handleSearch(this.value)">
+    <button class="search-btn">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main" id="mainContent"></div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-logo">Alike</div>
+  <p>&copy; 2026 Alike. All rights reserved. One platform for travellers & content creators.</p>
+</div>
+
+<script>
+// ── BASE URL: Change this to your GitHub Pages repo URL ──
+const BASE_URL = "https://alike-io.github.io/holiday-packages/flyers/";
+
+const destinations = [
+  {
+    name: "Dubai",
+    emoji: "🏙️",
+    files: [
+      { name: "Dubai 3N4D - ₹25K", type: "pdf", file: "Dubai_3N4D_25k.pdf", desc: "3 Nights / 4 Days" },
+      { name: "Dubai 4N5D - ₹30K", type: "pdf", file: "Dubai_4N5D_30k.pdf", desc: "4 Nights / 5 Days" },
+      { name: "Dubai Ultimate Explorer with Ferrari World - ₹45K", type: "pdf", file: "Dubai_ultimate_explorer_with Ferrari world_45k.pdf", desc: "Ultimate Explorer Package" },
+      { name: "Dubai + Abu Dhabi Day Tour Explorer 5N6D - ₹36K", type: "pdf", file: "Dubai+Abu Dhabi Day tour_Explorer_5N6D_36k.pdf", desc: "5 Nights / 6 Days" },
+      { name: "Dubai + Abu Dhabi Explorer with Miracle & Global 5N6D - ₹38K", type: "pdf", file: "Dubai+Abu Dhabi Day tour_Explorer_Miracle & Global_5N6D_38k.pdf", desc: "5 Nights / 6 Days • Miracle Garden & Global Village" }
+    ]
+  },
+  {
+    name: "Singapore",
+    emoji: "🦁",
+    files: [
+      { name: "Singapore Explorer 4N5D - ₹55K", type: "pdf", file: "Singapore_explorer_4N5D_55k.pdf", desc: "4 Nights / 5 Days" },
+      { name: "Singapore Explorer 6N7D - ₹75K", type: "pdf", file: "Singapore_explorer_6N7D_75k.pdf", desc: "6 Nights / 7 Days" }
+    ]
+  },
+  {
+    name: "Vietnam",
+    emoji: "🏮",
+    files: [
+      { name: "Vietnam - Hanoi & Da Nang 4N - ₹30K/₹35K", type: "pdf", file: "Vietnam - Hanoi & Da Nang_4N_30k&35k.pdf", desc: "4 Nights • Hanoi + Da Nang" },
+      { name: "Vietnam - Hanoi & Phu Quoc 5N - ₹44K/₹49K", type: "pdf", file: "Vietnam - Hanoi & Phu Quoc_5N_44k&49k.pdf", desc: "5 Nights • Hanoi + Phu Quoc" },
+      { name: "Vietnam - Phu Quoc 4N5D - ₹25K", type: "pdf", file: "Vietnam - Phu Quoc_4N5D_25K.pdf", desc: "4 Nights / 5 Days • Beach Paradise" },
+      { name: "Vietnam - HCM, Da Nang, Hoi An, Hanoi & Ha Long Bay 6N7D - ₹40K/₹50K", type: "pdf", file: "Vietnam - HCM+DA Nang+HoiAn+Hanoi+Halong Bay_6N7D_40k&50k.pdf", desc: "6 Nights / 7 Days • Full Country Tour" },
+      { name: "Vietnam - Hanoi, Ha Long Bay Cruise & Da Nang 7N8D - ₹60K/₹66K", type: "pdf", file: "Vietnam - Hanoi, Halong Bay cruise and Da Nang_7N8D_60K&66K.pdf", desc: "7 Nights / 8 Days • Cruise Included" },
+      { name: "Vietnam Premium 7N8D", type: "pdf", file: "Vietnam_premium_7n8d.pdf", desc: "7 Nights / 8 Days • Premium Experience" }
+    ]
+  },
+  {
+    name: "Thailand",
+    emoji: "🛕",
+    files: [
+      { name: "Thailand - Pattaya & Bangkok 4N5D - ₹23K", type: "pdf", file: "Thailand_pattaya_bangkok_4n5d_23k.pdf", desc: "4 Nights / 5 Days" },
+      { name: "Thailand - Krabi & Phuket 4N5D - ₹24K", type: "pdf", file: "thailand_krabi_phuket_4n5d_24k.pdf", desc: "4 Nights / 5 Days" }
+    ]
+  },
+  {
+    name: "Bali",
+    emoji: "🌺",
+    files: [
+      { name: "Bali 4N5D - ₹27K", type: "pdf", file: "Bali_4N5D_27k.pdf", desc: "4 Nights / 5 Days" },
+      { name: "Bali 6N7D with 2 Nights in Villa - ₹45K", type: "pdf", file: "Bali_6N7D_with 2 nights in villa_45k.pdf", desc: "6 Nights / 7 Days • Villa Stay Included" }
+    ]
+  },
+  {
+    name: "Andaman",
+    emoji: "🏝️",
+    files: [
+      { name: "Andaman 5N6D - ₹19K", type: "pdf", file: "Andaman_5n6d_19k.pdf", desc: "5 Nights / 6 Days" }
+    ]
+  },
+  {
+    name: "Bhutan",
+    emoji: "🏔️",
+    files: [
+      { name: "Bhutan 7N8D - ₹45K", type: "pdf", file: "Bhutan_7N8D_45k.pdf", desc: "7 Nights / 8 Days" }
+    ]
+  },
+  {
+    name: "Multi-Country",
+    emoji: "🌏",
+    files: [
+      { name: "Asian Extravaganza 10N11D - 4 Cities - ₹1.6L", type: "pdf", file: "Asian_Extravaganza_10N11D_4 cities_160k.pdf", desc: "10 Nights / 11 Days • 4 Cities" }
+    ]
+  }
+];
+
+let currentView = 'folders';
+let currentDest = null;
+
+function render() {
+  const main = document.getElementById('mainContent');
+
+  if (currentView === 'folders') {
+    const searchVal = document.getElementById('searchInput').value.toLowerCase();
+    const filtered = destinations.filter(d => d.name.toLowerCase().includes(searchVal));
+
+    main.innerHTML = `
+      <div class="section-header">
+        <div>
+          <div class="breadcrumb">
+            <a>Home</a>
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            <span>All Destinations</span>
+          </div>
+          <h2>Explore Destinations</h2>
+        </div>
+      </div>
+      <div class="destinations-grid">
+        ${filtered.map(d => `
+          <div class="dest-card" onclick="openFolder('${d.name}')">
+            <div class="dest-icon">${d.emoji}</div>
+            <div class="dest-name">${d.name}</div>
+            <div class="dest-count">${d.files.length} package${d.files.length > 1 ? 's' : ''}</div>
+            <div class="dest-arrow">
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  } else {
+    const dest = destinations.find(d => d.name === currentDest);
+    const searchVal = document.getElementById('searchInput').value.toLowerCase();
+    const filtered = dest.files.filter(f => f.name.toLowerCase().includes(searchVal) || f.desc.toLowerCase().includes(searchVal));
+
+    main.innerHTML = `
+      <button class="back-btn" onclick="goBack()">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        All Destinations
+      </button>
+      <div class="section-header">
+        <div>
+          <div class="breadcrumb">
+            <a onclick="goBack()">Home</a>
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            <a onclick="goBack()">Destinations</a>
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            <span>${dest.name}</span>
+          </div>
+          <h2>${dest.emoji} ${dest.name} Packages</h2>
+        </div>
+      </div>
+      <div class="files-grid">
+        ${filtered.map(f => `
+          <a class="file-row" href="${BASE_URL}${encodeURIComponent(f.file)}" target="_blank" download>
+            <div class="file-icon ${f.type}">${f.type.toUpperCase()}</div>
+            <div class="file-info">
+              <div class="file-name">${f.name}</div>
+              <div class="file-meta">
+                <span>${f.desc}</span>
+              </div>
+            </div>
+            <button class="download-btn" title="Download" onclick="event.stopPropagation()">
+              <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </button>
+          </a>
+        `).join('')}
+      </div>
+    `;
+  }
+}
+
+function openFolder(name) {
+  currentView = 'files';
+  currentDest = name;
+  document.getElementById('searchInput').value = '';
+  render();
+  window.scrollTo({ top: 200, behavior: 'smooth' });
+}
+
+function goBack() {
+  currentView = 'folders';
+  currentDest = null;
+  document.getElementById('searchInput').value = '';
+  render();
+  window.scrollTo({ top: 200, behavior: 'smooth' });
+}
+
+function handleSearch(val) {
+  render();
+}
+
+// Initial render
+render();
+</script>
+</body>
+</html>
