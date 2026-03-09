@@ -83,28 +83,12 @@
   .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
     text-decoration: none;
-    color: var(--white);
   }
 
-  .logo-icon {
-    width: 40px; height: 40px;
-    background: var(--white);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--coral);
-  }
-
-  .logo-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 26px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
+  .logo-img {
+    height: 38px;
+    width: auto;
   }
 
   .nav-links {
@@ -695,11 +679,10 @@
   }
 
   .footer-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--white);
+    height: 36px;
+    width: auto;
     margin-bottom: 12px;
+    opacity: 0.9;
   }
 
   .footer p {
@@ -733,8 +716,7 @@
 <div class="hero">
   <nav class="nav">
     <a class="logo" href="#">
-      <div class="logo-icon">A</div>
-      <span class="logo-text">Alike</span>
+      <img src="assets/alike-logo-white.png" alt="Alike" class="logo-img">
     </a>
     <ul class="nav-links">
       <li><a href="#">Home</a></li>
@@ -765,7 +747,7 @@
 
 <!-- FOOTER -->
 <div class="footer">
-  <div class="footer-logo">Alike</div>
+  <div class="footer-logo"><img src="assets/alike-logo-white.png" alt="Alike" style="height:36px;width:auto;opacity:0.9;"></div>
   <p>&copy; 2026 Alike. All rights reserved. One platform for travellers & content creators.</p>
 </div>
 
@@ -797,6 +779,15 @@ const destinations = [
       },
       { name: "Dubai + Abu Dhabi Explorer with Miracle Garden & Global Village 5N6D", type: "pdf", file: "dubai-abudhabi-miracle-global-5n6d-38k.pdf", desc: "5 Nights / 6 Days • Starting ₹38K",
         summary: { price: "₹38,000/person", duration: "5N / 6D", cities: "Dubai + Abu Dhabi", hotels: "3★–4★", meals: "Breakfast Daily", transfers: "Private Transfers", highlights: ["Miracle Garden", "Global Village", "Sheikh Zayed Mosque", "Desert Safari", "Dubai Marina Cruise"], bestFor: "Family • Couples" }
+      }
+    ]
+  },
+  {
+    name: "Abu Dhabi",
+    emoji: "🕌",
+    files: [
+      { name: "Abu Dhabi 4N5D", type: "pdf", file: "alike-abudhabi-4n5d.pdf", desc: "4 Nights / 5 Days",
+        summary: { price: "Contact for pricing", duration: "4N / 5D", cities: "Abu Dhabi", hotels: "4★", meals: "Breakfast Daily", transfers: "Private Transfers", highlights: ["Sheikh Zayed Grand Mosque", "Yas Island", "Louvre Abu Dhabi", "Corniche Beach", "Mangrove Kayaking"], bestFor: "Couples • Culture Lovers • Family" }
       }
     ]
   },
