@@ -469,6 +469,199 @@
 
   .download-btn:hover svg { stroke: var(--white); }
 
+  /* ─── QUICK VIEW BUTTON ─── */
+  .quick-view-btn {
+    padding: 6px 14px;
+    border-radius: 8px;
+    background: var(--coral-soft);
+    border: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--coral);
+    transition: all 0.25s;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .quick-view-btn:hover {
+    background: var(--coral);
+    color: var(--white);
+  }
+
+  /* ─── SUMMARY MODAL ─── */
+  .modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(26, 26, 46, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.2s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .modal-card {
+    background: var(--white);
+    border-radius: 20px;
+    max-width: 520px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    animation: slideUp 0.3s ease;
+    position: relative;
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .modal-header {
+    background: linear-gradient(135deg, var(--coral) 0%, var(--coral-light) 100%);
+    padding: 28px 28px 22px;
+    border-radius: 20px 20px 0 0;
+    position: relative;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 16px; right: 16px;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+
+  .modal-close:hover { background: rgba(255,255,255,0.4); }
+  .modal-close svg { width: 16px; height: 16px; stroke: white; fill: none; stroke-width: 2.5; }
+
+  .modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 4px;
+    padding-right: 40px;
+  }
+
+  .modal-price {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--white);
+    margin-top: 8px;
+  }
+
+  .modal-body {
+    padding: 24px 28px 28px;
+  }
+
+  .modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+
+  .modal-stat {
+    background: var(--gray-100);
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+
+  .modal-stat-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--gray-400);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+
+  .modal-stat-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark);
+  }
+
+  .modal-highlights-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+
+  .modal-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .modal-chip {
+    background: var(--coral-soft);
+    color: var(--coral);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+
+  .modal-best-for {
+    font-size: 13px;
+    color: var(--gray-400);
+    text-align: center;
+    padding-top: 16px;
+    border-top: 1px solid var(--gray-200);
+  }
+
+  .modal-best-for strong { color: var(--dark); }
+
+  .modal-download {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-top: 16px;
+    background: var(--coral);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .modal-download:hover { background: var(--coral-hover); }
+
+  @media (max-width: 480px) {
+    .modal-grid { grid-template-columns: 1fr; }
+    .modal-card { border-radius: 16px; }
+    .modal-header { border-radius: 16px 16px 0 0; padding: 22px 20px 18px; }
+    .modal-body { padding: 20px; }
+    .quick-view-btn { padding: 5px 10px; font-size: 11px; }
+  }
+
   /* ─── BACK BUTTON ─── */
   .back-btn {
     display: inline-flex;
@@ -590,68 +783,127 @@ const destinations = [
     name: "Dubai",
     emoji: "🏙️",
     files: [
-      { name: "Dubai 3N4D", type: "pdf", file: "dubai-3n4d-25k.pdf", desc: "3 Nights / 4 Days • Starting ₹25K" },
-      { name: "Dubai 4N5D", type: "pdf", file: "dubai-4n5d-30k.pdf", desc: "4 Nights / 5 Days • Starting ₹30K" },
-      { name: "Dubai Ultimate Explorer with Ferrari World", type: "pdf", file: "dubai-ultimate-explorer-ferrari-world-45k.pdf", desc: "Ultimate Explorer Package • ₹45K" },
-      { name: "Dubai + Abu Dhabi Day Tour Explorer 5N6D", type: "pdf", file: "dubai-abudhabi-explorer-5n6d-36k.pdf", desc: "5 Nights / 6 Days • Starting ₹36K" },
-      { name: "Dubai + Abu Dhabi Explorer with Miracle Garden & Global Village 5N6D", type: "pdf", file: "dubai-abudhabi-miracle-global-5n6d-38k.pdf", desc: "5 Nights / 6 Days • Starting ₹38K" }
+      { name: "Dubai 3N4D", type: "pdf", file: "dubai-3n4d-25k.pdf", desc: "3 Nights / 4 Days • Starting ₹25K",
+        summary: { price: "₹25,000/person", duration: "3N / 4D", cities: "Dubai", hotels: "3★–4★", meals: "Breakfast Daily", transfers: "Private Transfers", highlights: ["Burj Khalifa views", "Desert Safari", "Dubai Mall & Fountain Show", "Dhow Cruise Marina"], bestFor: "Couples • Friends" }
+      },
+      { name: "Dubai 4N5D", type: "pdf", file: "dubai-4n5d-30k.pdf", desc: "4 Nights / 5 Days • Starting ₹30K",
+        summary: { price: "₹30,000/person", duration: "4N / 5D", cities: "Dubai", hotels: "3★–4★", meals: "Breakfast Daily", transfers: "Private Transfers", highlights: ["Burj Khalifa", "Desert Safari", "Dubai Marina Cruise", "Miracle Garden", "Dubai Frame"], bestFor: "Couples • Family" }
+      },
+      { name: "Dubai Ultimate Explorer with Ferrari World", type: "pdf", file: "dubai-ultimate-explorer-ferrari-world-45k.pdf", desc: "Ultimate Explorer Package • ₹45K",
+        summary: { price: "₹45,000/person", duration: "5N / 6D", cities: "Dubai + Abu Dhabi", hotels: "4★", meals: "Breakfast Daily", transfers: "Private Transfers", highlights: ["Ferrari World Abu Dhabi", "Burj Khalifa At The Top", "Desert Safari", "Dhow Cruise", "Dubai Frame"], bestFor: "Thrill Seekers • Family" }
+      },
+      { name: "Dubai + Abu Dhabi Day Tour Explorer 5N6D", type: "pdf", file: "dubai-abudhabi-explorer-5n6d-36k.pdf", desc: "5 Nights / 6 Days • Starting ₹36K",
+        summary: { price: "₹36,000/person", duration: "5N / 6D", cities: "Dubai + Abu Dhabi", hotels: "3★–4★", meals: "Breakfast Daily", transfers: "Private Transfers", highlights: ["Sheikh Zayed Mosque", "Abu Dhabi City Tour", "Desert Safari", "Dubai Marina", "Burj Khalifa area"], bestFor: "Couples • Culture Lovers" }
+      },
+      { name: "Dubai + Abu Dhabi Explorer with Miracle Garden & Global Village 5N6D", type: "pdf", file: "dubai-abudhabi-miracle-global-5n6d-38k.pdf", desc: "5 Nights / 6 Days • Starting ₹38K",
+        summary: { price: "₹38,000/person", duration: "5N / 6D", cities: "Dubai + Abu Dhabi", hotels: "3★–4★", meals: "Breakfast Daily", transfers: "Private Transfers", highlights: ["Miracle Garden", "Global Village", "Sheikh Zayed Mosque", "Desert Safari", "Dubai Marina Cruise"], bestFor: "Family • Couples" }
+      }
     ]
   },
   {
     name: "Singapore",
     emoji: "🦁",
     files: [
-      { name: "Singapore Explorer 4N5D", type: "pdf", file: "singapore-explorer-4n5d-55k.pdf", desc: "4 Nights / 5 Days • Starting ₹55K" },
-      { name: "Singapore Explorer 6N7D", type: "pdf", file: "singapore-explorer-6n7d-75k.pdf", desc: "6 Nights / 7 Days • Starting ₹75K" }
+      { name: "Singapore Explorer 4N5D", type: "pdf", file: "singapore-explorer-4n5d-55k.pdf", desc: "4 Nights / 5 Days • Starting ₹55K",
+        summary: { price: "₹55,000/person", duration: "4N / 5D", cities: "Singapore", hotels: "3★–4★", meals: "Breakfast Daily", transfers: "Private Transfers", highlights: ["Sentosa Island", "Gardens by the Bay", "Marina Bay Sands area", "Universal Studios Singapore", "Merlion Park"], bestFor: "Family • Couples" }
+      },
+      { name: "Singapore Explorer 6N7D", type: "pdf", file: "singapore-explorer-6n7d-75k.pdf", desc: "6 Nights / 7 Days • Starting ₹75K",
+        summary: { price: "₹75,000/person", duration: "6N / 7D", cities: "Singapore", hotels: "4★", meals: "Breakfast Daily", transfers: "Private Transfers", highlights: ["Sentosa Island", "Universal Studios", "Night Safari", "Gardens by the Bay", "Marina Bay Sands", "Chinatown & Little India"], bestFor: "Family • Couples • Honeymoon" }
+      }
     ]
   },
   {
     name: "Vietnam",
     emoji: "🏮",
     files: [
-      { name: "Vietnam - Hanoi & Da Nang 4N", type: "pdf", file: "vietnam-hanoi-danang-4n-30k-35k.pdf", desc: "4 Nights • Starting ₹30K / ₹35K" },
-      { name: "Vietnam - Hanoi & Phu Quoc 5N", type: "pdf", file: "vietnam-hanoi-phuquoc-5n-44k-49k.pdf", desc: "5 Nights • Starting ₹44K / ₹49K" },
-      { name: "Vietnam - Phu Quoc 4N5D", type: "pdf", file: "vietnam-phuquoc-4n5d-25k.pdf", desc: "4 Nights / 5 Days • Starting ₹25K" },
-      { name: "Vietnam - Full Country Tour 6N7D", type: "pdf", file: "vietnam-hcm-danang-hoian-hanoi-halongbay-6n7d-40k-50k.pdf", desc: "6 Nights / 7 Days • HCM, Da Nang, Hoi An, Hanoi & Ha Long Bay • ₹40K / ₹50K" },
-      { name: "Vietnam - Hanoi, Ha Long Bay Cruise & Da Nang 7N8D", type: "pdf", file: "vietnam-hanoi-halongbay-cruise-danang-7n8d-60k-66k.pdf", desc: "7 Nights / 8 Days • Cruise Included • ₹60K / ₹66K" },
-      { name: "Vietnam Premium 7N8D", type: "pdf", file: "vietnam-premium-7n8d.pdf", desc: "7 Nights / 8 Days • Premium Experience" }
+      { name: "Vietnam - Hanoi & Da Nang 4N", type: "pdf", file: "vietnam-hanoi-danang-4n-30k-35k.pdf", desc: "4 Nights • Starting ₹30K / ₹35K",
+        summary: { price: "₹30K–₹35K/person", duration: "4 Nights", cities: "Hanoi + Da Nang", hotels: "3★–4★", meals: "Breakfast Daily", transfers: "Private Transfers", highlights: ["Hanoi Old Quarter", "Da Nang Beach", "Ba Na Hills", "Dragon Bridge"], bestFor: "Couples • Friends" }
+      },
+      { name: "Vietnam - Hanoi & Phu Quoc 5N", type: "pdf", file: "vietnam-hanoi-phuquoc-5n-44k-49k.pdf", desc: "5 Nights • Starting ₹44K / ₹49K",
+        summary: { price: "₹44K–₹49K/person", duration: "5 Nights", cities: "Hanoi + Phu Quoc", hotels: "3★–4★", meals: "Breakfast Daily", transfers: "Private Transfers + Flights", highlights: ["Hanoi Old Quarter", "Phu Quoc Island", "Beach Resort Stay", "Snorkeling", "Night Market"], bestFor: "Couples • Honeymoon • Beach Lovers" }
+      },
+      { name: "Vietnam - Phu Quoc 4N5D", type: "pdf", file: "vietnam-phuquoc-4n5d-25k.pdf", desc: "4 Nights / 5 Days • Starting ₹25K",
+        summary: { price: "₹25,000/person", duration: "4N / 5D", cities: "Phu Quoc Island", hotels: "3★", meals: "Breakfast Daily", transfers: "Private Transfers", highlights: ["Beach Paradise", "Island Hopping", "Night Market", "Vinpearl Safari"], bestFor: "Couples • Beach Lovers" }
+      },
+      { name: "Vietnam - Full Country Tour 6N7D", type: "pdf", file: "vietnam-hcm-danang-hoian-hanoi-halongbay-6n7d-40k-50k.pdf", desc: "6 Nights / 7 Days • HCM, Da Nang, Hoi An, Hanoi & Ha Long Bay • ₹40K / ₹50K",
+        summary: { price: "₹40K–₹50K/person", duration: "6N / 7D", cities: "HCM → Da Nang → Hoi An → Hanoi → Ha Long Bay", hotels: "3★–4★", meals: "Breakfast Daily", transfers: "Private + Internal Flights", highlights: ["Ho Chi Minh City", "Da Nang Beach", "Hoi An Ancient Town", "Hanoi Old Quarter", "Ha Long Bay Cruise"], bestFor: "Family • Culture Lovers • Adventure" }
+      },
+      { name: "Vietnam - Hanoi, Ha Long Bay Cruise & Da Nang 7N8D", type: "pdf", file: "vietnam-hanoi-halongbay-cruise-danang-7n8d-60k-66k.pdf", desc: "7 Nights / 8 Days • Cruise Included • ₹60K / ₹66K",
+        summary: { price: "₹60K–₹66K/person", duration: "7N / 8D", cities: "Hanoi → Ha Long Bay → Da Nang", hotels: "4★ + Cruise", meals: "Breakfast + Cruise Meals", transfers: "Private + Cruise", highlights: ["Ha Long Bay Overnight Cruise", "Hanoi Old Quarter", "Ba Na Hills", "Da Nang & Hoi An", "Kayaking & Cave Exploration"], bestFor: "Couples • Honeymoon • Cruise Lovers" }
+      },
+      { name: "Vietnam Premium 7N8D", type: "pdf", file: "vietnam-premium-7n8d.pdf", desc: "7 Nights / 8 Days • Premium Experience",
+        summary: { price: "Premium Package", duration: "7N / 8D", cities: "Multi-city Vietnam", hotels: "4★–5★", meals: "Breakfast + Select Meals", transfers: "Private Luxury Transfers", highlights: ["Premium Hotels", "Ha Long Bay Cruise", "Da Nang Beaches", "Hoi An Ancient Town", "Hanoi Food Tour"], bestFor: "Luxury Travellers • Honeymoon" }
+      }
     ]
   },
   {
     name: "Thailand",
     emoji: "🛕",
     files: [
-      { name: "Thailand - Pattaya & Bangkok 4N5D", type: "pdf", file: "thailand-pattaya-bangkok-4n5d-23k.pdf", desc: "4 Nights / 5 Days • Starting ₹23K" },
-      { name: "Thailand - Krabi & Phuket 4N5D", type: "pdf", file: "thailand-krabi-phuket-4n5d-24k.pdf", desc: "4 Nights / 5 Days • Starting ₹24K" }
+      { name: "Thailand - Pattaya & Bangkok 4N5D", type: "pdf", file: "thailand-pattaya-bangkok-4n5d-23k.pdf", desc: "4 Nights / 5 Days • Starting ₹23K",
+        summary: { price: "₹23,000/person", duration: "4N / 5D", cities: "Pattaya + Bangkok", hotels: "3★", meals: "Breakfast Daily", transfers: "Private Transfers", highlights: ["Coral Island", "Alcazar Show", "Grand Palace", "Wat Pho", "Floating Market"], bestFor: "Family • Friends • Budget" }
+      },
+      { name: "Thailand - Krabi & Phuket 4N5D", type: "pdf", file: "thailand-krabi-phuket-4n5d-24k.pdf", desc: "4 Nights / 5 Days • Starting ₹24K",
+        summary: { price: "₹24,000/person", duration: "4N / 5D", cities: "Krabi + Phuket", hotels: "3★", meals: "Breakfast Daily", transfers: "Private Transfers", highlights: ["Phi Phi Islands", "Krabi 4 Islands Tour", "James Bond Island", "Phuket Old Town", "Beach Relaxation"], bestFor: "Couples • Beach Lovers • Adventure" }
+      }
     ]
   },
   {
     name: "Bali",
     emoji: "🌺",
     files: [
-      { name: "Bali 4N5D", type: "pdf", file: "bali-4n5d-27k.pdf", desc: "4 Nights / 5 Days • Starting ₹27K" },
-      { name: "Bali 6N7D with Villa Stay", type: "pdf", file: "bali-6n7d-villa-45k.pdf", desc: "6 Nights / 7 Days • 2 Nights in Villa • ₹45K" }
+      { name: "Bali 4N5D", type: "pdf", file: "bali-4n5d-27k.pdf", desc: "4 Nights / 5 Days • Starting ₹27K",
+        summary: { price: "₹27,000/person", duration: "4N / 5D", cities: "Bali", hotels: "3★–4★", meals: "Breakfast Daily", transfers: "Private Transfers", highlights: ["Tanah Lot Temple", "Ubud Rice Terraces", "Kintamani Volcano", "Seminyak Beach", "Water Sports"], bestFor: "Couples • Honeymoon" }
+      },
+      { name: "Bali 6N7D with Villa Stay", type: "pdf", file: "bali-6n7d-villa-45k.pdf", desc: "6 Nights / 7 Days • 2 Nights in Villa • ₹45K",
+        summary: { price: "₹45,000/person", duration: "6N / 7D", cities: "Bali", hotels: "4★ + Private Villa", meals: "Breakfast Daily", transfers: "Private Transfers", highlights: ["2 Nights Private Villa", "Nusa Penida Day Trip", "Ubud Monkey Forest", "Uluwatu Temple Sunset", "Tegallalang Rice Terrace", "Spa & Wellness"], bestFor: "Honeymoon • Luxury • Couples" }
+      }
     ]
   },
   {
     name: "Andaman",
     emoji: "🏝️",
     files: [
-      { name: "Andaman 5N6D", type: "pdf", file: "andaman-5n6d-19k.pdf", desc: "5 Nights / 6 Days • Starting ₹19K" }
+      { name: "Andaman 5N6D", type: "pdf", file: "andaman-5n6d-19k.pdf", desc: "5 Nights / 6 Days • Starting ₹19K",
+        summary: { price: "₹19,000/person", duration: "5N / 6D", cities: "Port Blair + Havelock + Neil", hotels: "3★", meals: "Breakfast Daily", transfers: "Ferry + Private", highlights: ["Radhanagar Beach", "Cellular Jail Light Show", "Scuba Diving", "Neil Island", "Glass Bottom Boat Ride"], bestFor: "Family • Couples • Beach Lovers" }
+      }
     ]
   },
   {
     name: "Bhutan",
     emoji: "🏔️",
     files: [
-      { name: "Bhutan 7N8D", type: "pdf", file: "bhutan-7n8d-45k.pdf", desc: "7 Nights / 8 Days • Starting ₹45K" }
+      { name: "Bhutan 7N8D", type: "pdf", file: "bhutan-7n8d-45k.pdf", desc: "7 Nights / 8 Days • Starting ₹45K",
+        summary: { price: "₹45,000/person", duration: "7N / 8D", cities: "Paro + Thimphu + Punakha", hotels: "3★–4★", meals: "All Meals", transfers: "Private Transfers", highlights: ["Tiger's Nest Monastery", "Punakha Dzong", "Thimphu Memorial Chorten", "Dochula Pass 108 Stupas", "Buddha Dordenma Statue"], bestFor: "Culture Lovers • Nature • Spiritual" }
+      }
+    ]
+  },
+  {
+    name: "Sri Lanka",
+    emoji: "🏛️",
+    files: [
+      { name: "Discover Sri Lanka 5N6D", type: "pdf", file: "srilanka-discover-5n6d-51k.pdf", desc: "5 Nights / 6 Days • Kandy, Nuwara Eliya, Bentota, Colombo • Starting ₹51K",
+        summary: {
+          price: "₹50,516/person",
+          duration: "5 Nights / 6 Days",
+          cities: "Kandy → Nuwara Eliya → Bentota → Colombo",
+          hotels: "3★–4★ (Mount Blue, Xavier's Cottage, Seagate, Mirage Colombo)",
+          meals: "Daily Breakfast",
+          transfers: "Private Car Throughout",
+          highlights: ["Sigiriya Rock Fortress (UNESCO)", "Dambulla Golden Cave Temple", "Pinnawala Elephant Orphanage", "Tea Plantation Drive", "Madu River Boat Safari", "Kosgoda Sea Turtle Hatchery", "Temple of the Tooth, Kandy", "Colombo City Tour"],
+          bestFor: "Couples • Honeymoon • Culture Lovers • Nature Lovers",
+          visa: "ETA Sri Lanka e-Visa included"
+        }
+      }
     ]
   },
   {
     name: "Multi-Country",
     emoji: "🌏",
     files: [
-      { name: "Asian Extravaganza 10N11D - 4 Cities", type: "pdf", file: "asian-extravaganza-10n11d-4cities-160k.pdf", desc: "10 Nights / 11 Days • 4 Cities • ₹1.6L" }
+      { name: "Asian Extravaganza 10N11D - 4 Cities", type: "pdf", file: "asian-extravaganza-10n11d-4cities-160k.pdf", desc: "10 Nights / 11 Days • 4 Cities • ₹1.6L",
+        summary: { price: "₹1,60,000/person", duration: "10N / 11D", cities: "4 Cities across Asia", hotels: "4★–5★", meals: "Breakfast Daily", transfers: "Flights + Private Transfers", highlights: ["4 Countries in 1 Trip", "Iconic Landmarks", "Cultural Immersion", "Beach + City Combo", "Premium Experiences"], bestFor: "Luxury • Explorers • Group Travel" }
+      }
     ]
   }
 ];
@@ -713,8 +965,8 @@ function render() {
         </div>
       </div>
       <div class="files-grid">
-        ${filtered.map(f => `
-          <a class="file-row" href="${BASE_URL}${encodeURIComponent(f.file)}" target="_blank" download>
+        ${filtered.map((f, idx) => `
+          <div class="file-row" style="animation-delay:${0.05*(idx+1)}s">
             <div class="file-icon ${f.type}">${f.type.toUpperCase()}</div>
             <div class="file-info">
               <div class="file-name">${f.name}</div>
@@ -722,10 +974,11 @@ function render() {
                 <span>${f.desc}</span>
               </div>
             </div>
-            <button class="download-btn" title="Download" onclick="event.stopPropagation()">
+            ${f.summary ? `<button class="quick-view-btn" onclick="showSummary('${dest.name}', ${idx})" title="Quick Summary">Quick View</button>` : ''}
+            <a class="download-btn" href="${BASE_URL}${f.file}" target="_blank" download title="Download">
               <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            </button>
-          </a>
+            </a>
+          </div>
         `).join('')}
       </div>
     `;
@@ -750,6 +1003,65 @@ function goBack() {
 
 function handleSearch(val) {
   render();
+}
+
+function showSummary(destName, fileIdx) {
+  const dest = destinations.find(d => d.name === destName);
+  const f = dest.files[fileIdx];
+  const s = f.summary;
+  if (!s) return;
+
+  const modal = document.createElement('div');
+  modal.className = 'modal-overlay';
+  modal.onclick = (e) => { if (e.target === modal) modal.remove(); };
+  modal.innerHTML = `
+    <div class="modal-card">
+      <div class="modal-header">
+        <button class="modal-close" onclick="this.closest('.modal-overlay').remove()">
+          <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <div class="modal-title">${f.name}</div>
+        <div class="modal-price">${s.price}</div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-grid">
+          <div class="modal-stat">
+            <div class="modal-stat-label">Duration</div>
+            <div class="modal-stat-value">${s.duration}</div>
+          </div>
+          <div class="modal-stat">
+            <div class="modal-stat-label">Hotels</div>
+            <div class="modal-stat-value">${s.hotels}</div>
+          </div>
+          <div class="modal-stat">
+            <div class="modal-stat-label">Meals</div>
+            <div class="modal-stat-value">${s.meals}</div>
+          </div>
+          <div class="modal-stat">
+            <div class="modal-stat-label">Transfers</div>
+            <div class="modal-stat-value">${s.transfers}</div>
+          </div>
+        </div>
+        <div class="modal-stat" style="margin-bottom:18px">
+          <div class="modal-stat-label">Cities</div>
+          <div class="modal-stat-value">${s.cities}</div>
+        </div>
+        ${s.visa ? `<div class="modal-stat" style="margin-bottom:18px">
+          <div class="modal-stat-label">Visa</div>
+          <div class="modal-stat-value">${s.visa}</div>
+        </div>` : ''}
+        <div class="modal-highlights-title">Highlights</div>
+        <div class="modal-highlights">
+          ${s.highlights.map(h => `<span class="modal-chip">${h}</span>`).join('')}
+        </div>
+        <div class="modal-best-for"><strong>Best for:</strong> ${s.bestFor}</div>
+        <a class="modal-download" href="${BASE_URL}${f.file}" target="_blank" download>
+          Download Full Itinerary (PDF)
+        </a>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(modal);
 }
 
 // Initial render
