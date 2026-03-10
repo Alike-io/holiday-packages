@@ -1,1 +1,1 @@
-# holiday-packagess
+# holiday-packages
