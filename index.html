@@ -440,9 +440,9 @@ body {
 }
 .group-card-subtitle { color: rgba(255,255,255,0.6); font-size: 13px; font-weight: 500; }
 .group-card-price {
-  position: absolute;
-  bottom: 24px; right: 28px;
-  text-align: right;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.1);
 }
 .group-card-price-label { font-size: 11px; color: rgba(255,255,255,0.5); }
 .group-card-price-val { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--coral-light); }
@@ -1028,64 +1028,64 @@ const curatedDestinations = [
   }
 ];
 
-// ════════ GROUP TOURS DATA ════════
-const groupTours = [
+// ════════ GROUP TOURS DATA (same structure as curated) ════════
+const groupDestinations = [
   {
-    name: "Japan Alps - The Must-Do Alpine Route Experience",
-    tag: "GROUP DEPARTURE",
-    emoji: "🗾",
-    country: "Japan",
-    duration: "9N / 10D",
-    cities: "Tokyo → Gotemba → Nagano → Toyama → Nagoya → Osaka",
-    citiesShort: "6 Cities",
-    price: "₹3,80,000/person",
-    priceNote: "incl. flights, visa, all meals",
-    hotels: "4★ Hotels",
-    meals: "9B / 8L / 9D",
-    flights: "Return Flights Incl.",
-    dates: ["19 May 2026", "10 Jun 2026"],
-    departureCities: "BLR / DEL / MUM / CHN / HYD",
-    file: "alike-japan-alps-group-catalog.pdf",
-    highlights: ["Tateyama Kurobe Alpine Route", "Mt. Fuji 5th Station", "TeamLab Planets", "Fushimi Inari Kyoto", "Nara Deer Park", "Osaka Castle", "Nabana no Sato Illumination", "Hakone Ropeway & Lake Ashi"],
-    summary: {
-      price: "₹3,80,000/person",
-      duration: "9N / 10D",
-      cities: "Tokyo → Gotemba → Nagano → Toyama → Nagoya → Osaka",
-      hotels: "4★ (Asakusa View, Mars Garden, Powdersuites, ANA Crowne, Nagoya Tokyu, Liber Osaka)",
-      meals: "9 Breakfasts · 8 Indian Lunches · 9 Indian Dinners",
-      transfers: "Private AC Coach + Bullet Train Sections",
-      highlights: ["Tateyama Kurobe Alpine Route", "Mt. Fuji 5th Station", "TeamLab Planets", "Fushimi Inari Torii Gates", "Kinkakuji Golden Pavilion", "Arashiyama Bamboo Grove", "Nara Deer Park & Todaiji", "Osaka Castle", "Hakone Ropeway & Lake Ashi", "Nabana no Sato LED Festival"],
-      bestFor: "Group Travel • Families • Culture Lovers • Photography",
-      visa: "Japan Visa (Single Entry) included"
-    }
+    name: "Japan", emoji: "🗾",
+    files: [
+      {
+        name: "Japan Alps - The Must-Do Alpine Route Experience", type: "pdf",
+        file: "alike-japan-alps-group-catalog.pdf",
+        desc: "9N / 10D • 6 Cities • ₹3,80,000/person • Flights & Visa Incl. • 19 May / 10 Jun 2026",
+        summary: {
+          price: "₹3,80,000/person",
+          duration: "9N / 10D",
+          cities: "Tokyo → Gotemba → Nagano → Toyama → Nagoya → Osaka",
+          hotels: "4★ (Asakusa View, Mars Garden, Powdersuites, ANA Crowne, Nagoya Tokyu, Liber Osaka)",
+          meals: "9 Breakfasts · 8 Indian Lunches · 9 Indian Dinners",
+          transfers: "Private AC Coach Throughout",
+          highlights: ["Tateyama Kurobe Alpine Route", "Mt. Fuji 5th Station", "TeamLab Planets", "Fushimi Inari Torii Gates", "Kinkakuji Golden Pavilion", "Arashiyama Bamboo Grove", "Nara Deer Park & Todaiji", "Osaka Castle", "Hakone Ropeway & Lake Ashi", "Nabana no Sato LED Festival"],
+          bestFor: "Group Travel • Families • Culture Lovers • Photography",
+          visa: "Japan Visa (Single Entry) included"
+        }
+      },
+      {
+        name: "Sakura Moments - The Ultimate Cherry Blossom Experience", type: "pdf",
+        file: "alike-sakura-moments-2026.pdf",
+        desc: "7N / 8D • 4 Cities • ₹3,30,774/person • Flights & Visa Incl. • Apr–May 2026",
+        summary: {
+          price: "₹3,30,774/person",
+          duration: "7N / 8D",
+          cities: "Tokyo → Hakone → Hiroshima → Osaka",
+          hotels: "4★ (Asakusa View, Oiso Prince, Grand Prince Hiroshima, RIHGA Royal Osaka)",
+          meals: "7 Breakfasts · 7 Indian Lunches · 8 Indian Dinners",
+          transfers: "AC Coach + Shinkansen Bullet Train",
+          highlights: ["Cherry Blossom Parks", "Mt. Fuji 5th Station", "TeamLab Planets", "Shinkansen Bullet Train", "Miyajima Island & Floating Torii", "Hiroshima Peace Memorial", "Fushimi Inari Shrine", "Arashiyama Bamboo Grove", "Nara Deer Park", "Sumida River Cruise"],
+          bestFor: "Couples • Families • Cherry Blossom • Bucket List",
+          visa: "Japan Tourist Visa (BLR jurisdiction) included"
+        }
+      }
+    ]
   },
   {
-    name: "Asian Extravaganza 10N11D - 4 Cities",
-    tag: "GROUP DEPARTURE",
-    emoji: "🌏",
-    country: "Multi-Country",
-    duration: "10N / 11D",
-    cities: "4 Cities across Asia",
-    citiesShort: "4 Cities",
-    price: "₹1,60,000/person",
-    priceNote: "Multi-country experience",
-    hotels: "4★–5★ Hotels",
-    meals: "Breakfast Daily",
-    flights: "Flights + Transfers",
-    dates: ["Contact for dates"],
-    departureCities: "Multiple cities",
-    file: "asian-extravaganza-10n11d-4cities-160k.pdf",
-    highlights: ["4 Countries in 1 Trip", "Iconic Landmarks", "Cultural Immersion", "Beach + City Combo", "Premium Experiences"],
-    summary: {
-      price: "₹1,60,000/person",
-      duration: "10N / 11D",
-      cities: "4 Cities across Asia",
-      hotels: "4★–5★",
-      meals: "Breakfast Daily",
-      transfers: "Flights + Private Transfers",
-      highlights: ["4 Countries in 1 Trip", "Iconic Landmarks", "Cultural Immersion", "Beach + City Combo", "Premium Experiences"],
-      bestFor: "Luxury • Explorers • Group Travel"
-    }
+    name: "Multi-Country", emoji: "🌏",
+    files: [
+      {
+        name: "Asian Extravaganza 10N11D - 4 Cities", type: "pdf",
+        file: "asian-extravaganza-10n11d-4cities-160k.pdf",
+        desc: "10N / 11D • 4 Cities across Asia • ₹1,60,000/person",
+        summary: {
+          price: "₹1,60,000/person",
+          duration: "10N / 11D",
+          cities: "4 Cities across Asia",
+          hotels: "4★–5★",
+          meals: "Breakfast Daily",
+          transfers: "Flights + Private Transfers",
+          highlights: ["4 Countries in 1 Trip", "Iconic Landmarks", "Cultural Immersion", "Beach + City Combo", "Premium Experiences"],
+          bestFor: "Luxury • Explorers • Group Travel"
+        }
+      }
+    ]
   }
 ];
 
@@ -1103,15 +1103,13 @@ function switchCategory(cat) {
 
 function render() {
   const main = document.getElementById('mainContent');
-
-  if (currentCategory === 'group') {
-    renderGroupTours(main);
-    return;
-  }
+  const dataSource = currentCategory === 'curated' ? curatedDestinations : groupDestinations;
+  const catLabel = currentCategory === 'curated' ? 'Curated Packages' : 'Group Departures';
+  const catTitle = currentCategory === 'curated' ? 'Explore Destinations' : 'Group Departure Destinations';
 
   if (currentView === 'folders') {
     const q = document.getElementById('searchInput').value.toLowerCase();
-    const filtered = curatedDestinations.filter(d =>
+    const filtered = dataSource.filter(d =>
       d.name.toLowerCase().includes(q) ||
       d.files.some(f => f.name.toLowerCase().includes(q) || f.desc.toLowerCase().includes(q))
     );
@@ -1120,11 +1118,11 @@ function render() {
       <div class="section-header">
         <div>
           <div class="breadcrumb">
-            <a onclick="switchCategory('curated')">Home</a>
+            <a onclick="switchCategory('${currentCategory}')">Home</a>
             <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-            <span>Curated Packages</span>
+            <span>${catLabel}</span>
           </div>
-          <h2>Explore Destinations</h2>
+          <h2>${catTitle}</h2>
         </div>
       </div>
       <div class="destinations-grid">
@@ -1132,7 +1130,7 @@ function render() {
           <div class="dest-card" onclick="openFolder('${d.name}')">
             <div class="dest-icon">${d.emoji}</div>
             <div class="dest-name">${d.name}</div>
-            <div class="dest-count">${d.files.length} package${d.files.length > 1 ? 's' : ''}</div>
+            <div class="dest-count">${d.files.length} package${d.files.length > 1 ? 's' : ''}${currentCategory === 'group' ? ' • Group' : ''}</div>
             <div class="dest-arrow">
               <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
             </div>
@@ -1141,7 +1139,7 @@ function render() {
       </div>
     `;
   } else {
-    const dest = curatedDestinations.find(d => d.name === currentDest);
+    const dest = dataSource.find(d => d.name === currentDest);
     const q = document.getElementById('searchInput').value.toLowerCase();
     const filtered = dest.files.filter(f => f.name.toLowerCase().includes(q) || f.desc.toLowerCase().includes(q));
 
@@ -1153,13 +1151,13 @@ function render() {
       <div class="section-header">
         <div>
           <div class="breadcrumb">
-            <a onclick="switchCategory('curated')">Home</a>
+            <a onclick="switchCategory('${currentCategory}')">Home</a>
             <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-            <a onclick="goBack()">Curated Packages</a>
+            <a onclick="goBack()">${catLabel}</a>
             <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
             <span>${dest.name}</span>
           </div>
-          <h2>${dest.emoji} ${dest.name} Packages</h2>
+          <h2>${dest.emoji} ${dest.name} ${currentCategory === 'group' ? 'Group Tours' : 'Packages'}</h2>
         </div>
       </div>
       <div class="files-grid">
@@ -1170,7 +1168,7 @@ function render() {
               <div class="file-name">${f.name}</div>
               <div class="file-meta"><span>${f.desc}</span></div>
             </div>
-            ${f.summary ? `<button class="quick-view-btn" onclick="showSummary('curated','${dest.name}',${idx})">Quick View</button>` : ''}
+            ${f.summary ? `<button class="quick-view-btn" onclick="showSummary('${currentCategory}','${dest.name}',${idx})">Quick View</button>` : ''}
             <a class="download-btn" href="${BASE_URL}${f.file}" onclick="downloadFile(event, '${f.file}')" title="Download">
               <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </a>
@@ -1179,64 +1177,6 @@ function render() {
       </div>
     `;
   }
-}
-
-function renderGroupTours(main) {
-  const q = document.getElementById('searchInput').value.toLowerCase();
-  const filtered = groupTours.filter(t =>
-    t.name.toLowerCase().includes(q) ||
-    t.country.toLowerCase().includes(q) ||
-    t.cities.toLowerCase().includes(q)
-  );
-
-  main.innerHTML = `
-    <div class="section-header">
-      <div>
-        <div class="breadcrumb">
-          <a onclick="switchCategory('group')">Home</a>
-          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-          <span>Group Departures</span>
-        </div>
-        <h2>Group Departure Tours</h2>
-      </div>
-    </div>
-    <div class="group-tour-grid">
-      ${filtered.map((t, idx) => `
-        <div class="group-card" style="animation-delay:${0.1*(idx+1)}s">
-          <div class="group-card-hero">
-            <div class="group-card-badge">${t.tag}</div>
-            <div class="group-card-title">${t.emoji} ${t.name}</div>
-            <div class="group-card-subtitle">${t.citiesShort} • ${t.duration} • ${t.dates.join(' / ')}</div>
-            <div class="group-card-price">
-              <div class="group-card-price-label">Starting from</div>
-              <div class="group-card-price-val">${t.price.split('/')[0]}</div>
-            </div>
-          </div>
-          <div class="group-card-body">
-            <div class="group-card-tags">
-              <div class="group-tag"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>${t.duration}</div>
-              <div class="group-tag"><svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>${t.citiesShort}</div>
-              <div class="group-tag"><svg viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>${t.hotels}</div>
-              <div class="group-tag"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91"/></svg>${t.flights}</div>
-            </div>
-            <div class="group-card-highlights">
-              ${t.highlights.slice(0, 5).map(h => `<div class="group-highlight">${h}</div>`).join('')}
-            </div>
-            <div class="group-card-actions">
-              <button class="group-btn group-btn-secondary" onclick="showSummary('group','${t.name}',${idx})">
-                <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                Quick View
-              </button>
-              <a class="group-btn group-btn-primary" href="${BASE_URL}${t.file}" onclick="downloadFile(event, '${t.file}')">
-                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Download Catalog
-              </a>
-            </div>
-          </div>
-        </div>
-      `).join('')}
-    </div>
-  `;
 }
 
 function openFolder(name) {
@@ -1257,17 +1197,11 @@ function goBack() {
 
 function handleSearch() { render(); }
 
-function showSummary(source, nameOrDest, idx) {
-  let f, s;
-  if (source === 'group') {
-    const t = groupTours[idx];
-    f = { name: t.name, file: t.file };
-    s = t.summary;
-  } else {
-    const dest = curatedDestinations.find(d => d.name === nameOrDest);
-    f = dest.files[idx];
-    s = f.summary;
-  }
+function showSummary(source, destName, idx) {
+  const dataSource = source === 'curated' ? curatedDestinations : groupDestinations;
+  const dest = dataSource.find(d => d.name === destName);
+  const f = dest.files[idx];
+  const s = f.summary;
   if (!s) return;
 
   const modal = document.createElement('div');
