@@ -818,11 +818,11 @@ body {
     <p>Browse curated holiday packages and exclusive group departures. Download itineraries, compare options, and book your dream trip.</p>
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-num">23+</div>
+        <div class="hero-stat-num">35+</div>
         <div class="hero-stat-label">Packages</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">12</div>
+        <div class="hero-stat-num">15+</div>
         <div class="hero-stat-label">Destinations</div>
       </div>
       <div class="hero-stat">
@@ -1025,65 +1025,110 @@ const curatedDestinations = [
         summary: { price: "₹45,000/person", duration: "7N / 8D", cities: "Paro + Thimphu + Punakha", hotels: "3★–4★", meals: "All Meals", transfers: "Private Transfers", highlights: ["Tiger's Nest Monastery", "Punakha Dzong", "Thimphu Memorial Chorten", "Dochula Pass 108 Stupas", "Buddha Dordenma Statue"], bestFor: "Culture Lovers • Nature • Spiritual" }
       }
     ]
+  },
+  {
+    name: "Maldives", emoji: "🏖️",
+    files: [
+      { name: "Maldives Split Stay - Beach + Overwater Villa", type: "pdf", file: "alike-maldives-split-stay.pdf", desc: "4N / 5D • Medhufushi Island Resort • ₹89,567/person • Flights extra",
+        summary: { price: "₹89,567/person", duration: "4N / 5D", cities: "Medhufushi Island, Meemu Atoll", hotels: "4★ Resort (Beach Villa 2N + Water Villa 2N)", meals: "4 Breakfasts · 4 Dinners", transfers: "Speedboat Transfer", highlights: ["2 Nights Beach Villa", "2 Nights Overwater Villa", "Ocean Deck", "Snorkelling & Kayaking", "Sunset Dhoni Cruise (optional)"], bestFor: "Couples • Honeymoon • Anniversary • Beach Escape" }
+      }
+    ]
+  },
+  {
+    name: "Mauritius", emoji: "🌊",
+    files: [
+      { name: "Mauritius Bliss - BBQ + Catamaran Cruise", type: "pdf", file: "alike-mauritius-bliss.pdf", desc: "6N / 7D • Anelia Resort & Spa • ₹89,662/person • Flights extra",
+        summary: { price: "₹89,662/person", duration: "6N / 7D", cities: "Mauritius (Flic-en-Flac)", hotels: "4★ Anelia Resort & Spa", meals: "6 Breakfasts · 1 BBQ Lunch · 6 Dinners", transfers: "All Private Transfers", highlights: ["Catamaran Cruise with Dolphins", "BBQ Lunch on Boat", "Île Aux Cerfs Island", "Chamarel 7 Coloured Earth", "La Rhumerie Rum Tasting", "South & North Island Tours"], bestFor: "Couples • Honeymoon • Families • Beach Lovers" }
+      }
+    ]
   }
 ];
 
-// ════════ GROUP TOURS DATA (same structure as curated) ════════
+// ════════ GROUP TOURS DATA (folder-based by country/region) ════════
 const groupDestinations = [
   {
     name: "Japan", emoji: "🗾",
     files: [
-      {
-        name: "Japan Alps - The Must-Do Alpine Route Experience", type: "pdf",
-        file: "alike-japan-alps-group-catalog.pdf",
-        desc: "9N / 10D • 6 Cities • ₹3,80,000/person • Flights & Visa Incl. • 19 May / 10 Jun 2026",
-        summary: {
-          price: "₹3,80,000/person",
-          duration: "9N / 10D",
-          cities: "Tokyo → Gotemba → Nagano → Toyama → Nagoya → Osaka",
-          hotels: "4★ (Asakusa View, Mars Garden, Powdersuites, ANA Crowne, Nagoya Tokyu, Liber Osaka)",
-          meals: "9 Breakfasts · 8 Indian Lunches · 9 Indian Dinners",
-          transfers: "Private AC Coach Throughout",
-          highlights: ["Tateyama Kurobe Alpine Route", "Mt. Fuji 5th Station", "TeamLab Planets", "Fushimi Inari Torii Gates", "Kinkakuji Golden Pavilion", "Arashiyama Bamboo Grove", "Nara Deer Park & Todaiji", "Osaka Castle", "Hakone Ropeway & Lake Ashi", "Nabana no Sato LED Festival"],
-          bestFor: "Group Travel • Families • Culture Lovers • Photography",
-          visa: "Japan Visa (Single Entry) included"
-        }
+      { name: "Japan Alps - Alpine Route Experience", type: "pdf", file: "alike-japan-alps-group-catalog.pdf",
+        desc: "9N / 10D • 6 Cities • ₹3,80,000/person • Flights & Visa Incl.",
+        summary: { price: "₹3,80,000/person", duration: "9N / 10D", cities: "Tokyo → Gotemba → Nagano → Toyama → Nagoya → Osaka", hotels: "4★", meals: "9B · 8L · 9D (Indian)", transfers: "Private AC Coach", highlights: ["Tateyama Kurobe Alpine Route", "Mt. Fuji 5th Station", "TeamLab Planets", "Fushimi Inari", "Nara Deer Park", "Osaka Castle", "Nabana no Sato Illumination"], bestFor: "Group Travel • Families • Photography", visa: "Japan Visa included" }
       },
-      {
-        name: "Sakura Moments - The Ultimate Cherry Blossom Experience", type: "pdf",
-        file: "alike-sakura-moments-2026.pdf",
-        desc: "7N / 8D • 4 Cities • ₹3,30,774/person • Flights & Visa Incl. • Apr–May 2026",
-        summary: {
-          price: "₹3,30,774/person",
-          duration: "7N / 8D",
-          cities: "Tokyo → Hakone → Hiroshima → Osaka",
-          hotels: "4★ (Asakusa View, Oiso Prince, Grand Prince Hiroshima, RIHGA Royal Osaka)",
-          meals: "7 Breakfasts · 7 Indian Lunches · 8 Indian Dinners",
-          transfers: "AC Coach + Shinkansen Bullet Train",
-          highlights: ["Cherry Blossom Parks", "Mt. Fuji 5th Station", "TeamLab Planets", "Shinkansen Bullet Train", "Miyajima Island & Floating Torii", "Hiroshima Peace Memorial", "Fushimi Inari Shrine", "Arashiyama Bamboo Grove", "Nara Deer Park", "Sumida River Cruise"],
-          bestFor: "Couples • Families • Cherry Blossom • Bucket List",
-          visa: "Japan Tourist Visa (BLR jurisdiction) included"
-        }
+      { name: "Sakura Moments - Cherry Blossom Experience", type: "pdf", file: "alike-sakura-moments-2026.pdf",
+        desc: "7N / 8D • 4 Cities • ₹3,30,774/person • Flights & Visa Incl.",
+        summary: { price: "₹3,30,774/person", duration: "7N / 8D", cities: "Tokyo → Hakone → Hiroshima → Osaka", hotels: "4★", meals: "7B · 7L · 8D (Indian)", transfers: "AC Coach + Shinkansen", highlights: ["Cherry Blossom Parks", "Mt. Fuji", "TeamLab Planets", "Miyajima Floating Torii", "Hiroshima Peace Memorial", "Fushimi Inari", "Arashiyama Bamboo"], bestFor: "Couples • Cherry Blossom • Bucket List", visa: "Japan Visa (BLR) included" }
+      },
+      { name: "Japan for First Timers - Classic Route", type: "pdf", file: "alike-japan-classic-route-firsttimers.pdf",
+        desc: "6N / 7D • 3 Cities • ₹1,91,483/person • Land Only",
+        summary: { price: "₹1,91,483/person", duration: "6N / 7D", cities: "Tokyo → Kanazawa → Kyoto", hotels: "4★", meals: "6B · 6D (Indian)", transfers: "AC Coach + Shinkansen", highlights: ["Imperial Palace & Asakusa", "Mt. Fuji & Chureito Pagoda", "Kanazawa Castle", "Fushimi Inari", "Kiyomizu-dera", "Osaka Day Trip"], bestFor: "First Timers • Couples • Solo • Golden Route" }
+      }
+    ]
+  },
+  {
+    name: "Europe", emoji: "🏰",
+    files: [
+      { name: "Amsterdam & Paris Classic", type: "pdf", file: "alike-amsterdam-paris-classic.pdf",
+        desc: "5N / 6D • 2 Cities • ₹2,19,387/person • Visa Incl. • Flights extra",
+        summary: { price: "₹2,19,387/person", duration: "5N / 6D", cities: "Amsterdam → Brussels → Paris", hotels: "4★", meals: "5B · 1L · 6D", transfers: "AC Coach (SIC)", highlights: ["Canal Cruise Amsterdam", "Keukenhof / Zaanse Schans", "Eiffel Tower 2nd Level", "Seine River Cruise", "Disneyland Paris", "Brussels Grand Place"], bestFor: "Couples • Families • Groups", visa: "France Visa included" }
+      },
+      { name: "Swiss Paris at a Glance", type: "pdf", file: "alike-swiss-paris-2026.pdf",
+        desc: "6N / 7D • 2 Cities • ₹1,83,447/person • Land Only",
+        summary: { price: "₹1,83,447/person", duration: "6N / 7D", cities: "Zurich → Rhine Falls → Paris", hotels: "4★", meals: "6B · 1L · 7D", transfers: "AC Coach (SIC)", highlights: ["Mt. Titlis 3,020m Rotair", "Cliff Walk", "Rhine Falls", "Lucerne", "Eiffel Tower 2nd Level", "Seine Cruise", "Disneyland Paris"], bestFor: "Couples • Families • Alps • Europe Classic" }
+      },
+      { name: "Elegant Escapes - Paris & London", type: "pdf", file: "alike-paris-london-2026.pdf",
+        desc: "6N / 7D • 2 Cities • ₹2,09,504/person • Land Only",
+        summary: { price: "₹2,09,504/person", duration: "6N / 7D", cities: "Paris → London", hotels: "4★", meals: "6B · 2L · 6D", transfers: "AC Coach + Eurostar", highlights: ["Eiffel Tower 2nd Level", "Seine Cruise", "Disneyland Paris", "London Eye", "Madame Tussauds", "Lords Cricket / Tower of London", "Bicester Village"], bestFor: "Couples • Families • Romance", visa: "Schengen + UK Visa support" }
+      },
+      { name: "Essence of Europe - Italy & Switzerland", type: "pdf", file: "alike-essence-of-europe-2026.pdf",
+        desc: "7N / 8D • 5 Cities • ₹2,02,651/person • Land Only",
+        summary: { price: "₹2,02,651/person", duration: "7N / 8D", cities: "Rome → Florence → Venice → Milan → Lake Como → Zurich", hotels: "4★", meals: "7B · 2L · 7D", transfers: "AC Coach (SIC)", highlights: ["Colosseum & Vatican", "Leaning Tower of Pisa", "Venice Gondola Ride", "Milan Duomo", "Lake Como & Bellagio", "Mt. Titlis 3,020m", "Lucerne"], bestFor: "Couples • Families • Heritage • Alps+Italy" }
+      },
+      { name: "Glimpses of Europe - 5 Countries", type: "pdf", file: "alike-glimpses-of-europe-2026.pdf",
+        desc: "8N / 9D • 5 Countries • ₹2,37,115/person • Land Only",
+        summary: { price: "₹2,37,115/person", duration: "8N / 9D", cities: "Paris → Brussels → Amsterdam → Cologne → Zurich", hotels: "4★", meals: "8B · 8L · 9D", transfers: "AC Coach (SIC)", highlights: ["Eiffel Tower 2nd Level", "Disneyland Paris", "Amsterdam Canal Cruise", "Cologne Cathedral", "Black Forest & Rhine Falls", "Mt. Titlis 3,020m", "Lucerne"], bestFor: "Groups • Honeymoon • Europe Grand Tour", visa: "Schengen Visa included" }
+      },
+      { name: "Wonders of Europe - 7 Countries Grand Tour", type: "pdf", file: "alike-wonders-of-europe.pdf",
+        desc: "12N / 13D • 8 Cities • ₹3,00,927/person • Land Only",
+        summary: { price: "₹3,00,927/person", duration: "12N / 13D", cities: "Paris → Brussels → Amsterdam → Zurich → Innsbruck → Venice → Florence → Rome", hotels: "4★", meals: "12B · 12L · 13D", transfers: "AC Coach Throughout", highlights: ["Eiffel Tower & Disneyland", "Amsterdam Canal Cruise", "Mt. Titlis 3,020m", "Swarovski Crystal Worlds", "Venice Gondola", "Pisa & Florence", "Vatican & Colosseum"], bestFor: "Families • Couples • Heritage & Culture", visa: "Schengen Visa included" }
+      }
+    ]
+  },
+  {
+    name: "Australia", emoji: "🦘",
+    files: [
+      { name: "Glimpses of Australia - 9 Days", type: "pdf", file: "alike-australia-9days.pdf",
+        desc: "8N / 9D • 3 Cities • ₹1,58,023/person • Land Only",
+        summary: { price: "₹1,58,023/person", duration: "8N / 9D", cities: "Melbourne → Gold Coast → Sydney", hotels: "4★", meals: "8 Breakfasts", transfers: "All Private Sedan/SUV", highlights: ["Phillip Island Penguin Parade", "Great Ocean Road & 12 Apostles", "Movie World Gold Coast", "Blue Mountains & Scenic World", "Big Bus Sydney 24hr", "Opera House & Harbour Bridge"], bestFor: "Families • Couples • Wildlife • Adventure" }
+      },
+      { name: "Grand Australia - 13 Days All Inclusive", type: "pdf", file: "alike-grand-australia-group.pdf",
+        desc: "12N / 13D • 4 Cities • ₹4,09,268/person • Flights & All Meals Incl.",
+        summary: { price: "₹4,09,268/person", duration: "12N / 13D", cities: "Melbourne → Gold Coast → Cairns → Sydney", hotels: "4★", meals: "All Meals (B+L+D)", transfers: "Private + Domestic Flights", highlights: ["Great Ocean Road", "Phillip Island", "Sea World & Movie World", "Kuranda Skyrail", "Great Barrier Reef Cruise", "Blue Mountains", "Sydney Merlin Pass"], bestFor: "Families • Groups • Wildlife • Bucket List", visa: "Australia ETA included" }
+      }
+    ]
+  },
+  {
+    name: "New Zealand", emoji: "🥝",
+    files: [
+      { name: "Explore New Zealand - Kiwi Wonders", type: "pdf", file: "alike-explore-new-zealand.pdf",
+        desc: "9N / 10D • 4 Cities • ₹2,19,259/person • Land Only • Halal & Veg",
+        summary: { price: "₹2,19,259/person", duration: "9N / 10D", cities: "Auckland → Rotorua → Queenstown → Christchurch", hotels: "4★", meals: "9B · 9L · 10D (Halal & Veg)", transfers: "Coach + Domestic Flights", highlights: ["Waitomo Glowworm Caves", "Hobbiton Movie Set", "Milford Sound Cruise", "Shotover Jet", "Blue Mountains via Mt Cook", "Antarctic Centre"], bestFor: "Adventure • Nature • Halal & Veg • Maori Culture", visa: "NZ Tourist Visa included" }
+      }
+    ]
+  },
+  {
+    name: "Northeast India", emoji: "🌿",
+    files: [
+      { name: "Northeast Odyssey - Assam & Meghalaya", type: "pdf", file: "alike-northeast-odyssey.pdf",
+        desc: "6N / 7D • 4 Cities • ₹32,400/person • Land Only",
+        summary: { price: "₹32,400/person", duration: "6N / 7D", cities: "Guwahati → Kaziranga → Shillong → Guwahati", hotels: "3★ / Deluxe", meals: "6B · 6D", transfers: "Private A/C Vehicle", highlights: ["Kamakhya Temple", "Kaziranga Jeep Safari", "Cherrapunjee Waterfalls", "Mawlynnong Cleanest Village", "Dawki Crystal River", "Living Root Bridge"], bestFor: "Nature • Wildlife • Photography • Cultural" }
       }
     ]
   },
   {
     name: "Multi-Country", emoji: "🌏",
     files: [
-      {
-        name: "Asian Extravaganza 10N11D - 4 Cities", type: "pdf",
-        file: "asian-extravaganza-10n11d-4cities-160k.pdf",
-        desc: "10N / 11D • 4 Cities across Asia • ₹1,60,000/person",
-        summary: {
-          price: "₹1,60,000/person",
-          duration: "10N / 11D",
-          cities: "4 Cities across Asia",
-          hotels: "4★–5★",
-          meals: "Breakfast Daily",
-          transfers: "Flights + Private Transfers",
-          highlights: ["4 Countries in 1 Trip", "Iconic Landmarks", "Cultural Immersion", "Beach + City Combo", "Premium Experiences"],
-          bestFor: "Luxury • Explorers • Group Travel"
-        }
+      { name: "Asian Extravaganza 10N11D - 4 Cities", type: "pdf", file: "asian-extravaganza-10n11d-4cities-160k.pdf",
+        desc: "10N / 11D • 4 Cities • ₹1,60,000/person",
+        summary: { price: "₹1,60,000/person", duration: "10N / 11D", cities: "4 Cities across Asia", hotels: "4★–5★", meals: "Breakfast Daily", transfers: "Flights + Private Transfers", highlights: ["4 Countries in 1 Trip", "Iconic Landmarks", "Cultural Immersion", "Beach + City Combo", "Premium Experiences"], bestFor: "Luxury • Explorers • Group Travel" }
       }
     ]
   }
